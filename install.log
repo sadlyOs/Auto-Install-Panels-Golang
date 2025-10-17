@@ -1,0 +1,145 @@
+Starting installation...
+Hit:1 http://deb.debian.org/debian bookworm InRelease
+Hit:2 http://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 http://security.debian.org/debian-security bookworm-security InRelease
+Hit:4 http://mirror.hetzner.com/debian/packages bookworm InRelease
+Hit:5 http://mirror.hetzner.com/debian/packages bookworm-backports InRelease
+Hit:6 http://repo.mysql.com/apt/debian bookworm InRelease
+Hit:7 http://mirror.hetzner.com/debian/packages bookworm-updates InRelease
+Hit:8 http://repo.fastpanel.direct bookworm InRelease
+Hit:9 http://mirror.hetzner.com/debian/security bookworm-security InRelease
+Hit:10 https://ngrok-agent.s3.amazonaws.com bookworm InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20230311+deb12u1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.88.1-10+deb12u14).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+--2025-10-17 19:38:36--  https://vestacp.com/pub/vst-install.sh
+Resolving vestacp.com (vestacp.com)... 2606:4700:310c::ac42:2c59, 2606:4700:310c::ac42:2fa7, 172.66.44.89, ...
+Connecting to vestacp.com (vestacp.com)|2606:4700:310c::ac42:2c59|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1714 (1.7K) [text/plain]
+Saving to: ‘install.sh’
+
+     0K .                                                     100% 25.0M=0s
+
+2025-10-17 19:38:36 (25.0 MB/s) - ‘install.sh’ saved [1714/1714]
+
+--2025-10-17 19:38:36--  https://vestacp.com/pub/vst-install-debian.sh
+Resolving vestacp.com (vestacp.com)... 2606:4700:310c::ac42:2fa7, 2606:4700:310c::ac42:2c59, 172.66.47.167, ...
+Connecting to vestacp.com (vestacp.com)|2606:4700:310c::ac42:2fa7|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 52042 (51K) [text/plain]
+Saving to: ‘vst-install-debian.sh’
+
+     0K .......... .......... .......... .......... .......... 98% 89.5M 0s
+    50K                                                       100% 26.4M=0.001s
+
+2025-10-17 19:38:37 (86.2 MB/s) - ‘vst-install-debian.sh’ saved [52042/52042]
+
+TERM environment variable not set.
+
+ _|      _|  _|_|_|_|    _|_|_|  _|_|_|_|_|    _|_|
+ _|      _|  _|        _|            _|      _|    _|
+ _|      _|  _|_|_|      _|_|        _|      _|_|_|_|
+   _|  _|    _|              _|      _|      _|    _|
+     _|      _|_|_|_|  _|_|_|        _|      _|    _|
+
+                                  Vesta Control Panel
+
+
+
+Following software will be installed on your system:
+   - Nginx Web Server
+   - Apache Web Server (as backend)
+   - Bind DNS Server
+   - Exim mail server + Antivirus Antispam
+   - Dovecot POP3/IMAP Server
+   - MySQL Database Server
+   - Vsftpd FTP Server
+   - Softaculous Plugin
+--2025-10-17 19:38:37--  https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hestia.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8002::154, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+HTTP request sent, awaiting response...    - Iptables Firewall + Fail2Ban
+
+
+Goodbye
+404 Not Found
+2025-10-17 19:38:37 ERROR 404: Not Found.
+
+--2025-10-17 19:38:37--  http://repo.fastpanel.direct/install_fastpanel.sh
+Resolving repo.fastpanel.direct (repo.fastpanel.direct)... 5.101.120.164
+Connecting to repo.fastpanel.direct (repo.fastpanel.direct)|5.101.120.164|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1251 (1.2K) [application/octet-stream]
+Saving to: ‘STDOUT’
+
+     0K .                                                     100%  164M=0s
+
+2025-10-17 19:38:37 (164 MB/s) - written to stdout [1251/1251]
+
+        _________   _______________  ___    _   __________ 
+       / ____/   | / ___/_  __/ __ \/   |  / | / / ____/ / 
+      / /_  / /| | \__ \ / / / /_/ / /| | /  |/ / __/ / /  
+     / __/ / ___ |___/ // / / ____/ ___ |/ /|  / /___/ /___
+    /_/   /_/  |_/____//_/ /_/   /_/  |_/_/ |_/_____/_____/
+
+[1;36mGreetings user!
+
+Now I will install the best control panel for you!
+
+[0m[1;36mStart pre-installation checks
+[0m[1;36mOS:	[0m[00;32mDebian GNU/Linux 12 (bookworm)
+
+[0m[1;31mFASTPANEL package have already been installed on the server. Exiting.
+[0m
+--2025-10-17 19:38:38--  https://download.ispmanager.com/install.sh
+Resolving download.ispmanager.com (download.ispmanager.com)... 213.239.193.43
+Connecting to download.ispmanager.com (download.ispmanager.com)|213.239.193.43|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 57126 (56K) [application/octet-stream]
+Saving to: ‘install.sh’
+
+     0K .......... .......... .......... .......... .......... 89% 1.92M 0s
+    50K .....                                                 100%  174M=0.03s
+
+2025-10-17 19:38:38 (2.14 MB/s) - ‘install.sh’ saved [57126/57126]
+
+Hit:1 http://security.debian.org/debian-security bookworm-security InRelease
+Hit:2 http://deb.debian.org/debian bookworm InRelease
+Hit:3 http://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 http://repo.mysql.com/apt/debian bookworm InRelease
+Hit:5 http://mirror.hetzner.com/debian/packages bookworm InRelease
+Hit:6 http://mirror.hetzner.com/debian/packages bookworm-backports InRelease
+Hit:7 http://mirror.hetzner.com/debian/packages bookworm-updates InRelease
+Hit:8 http://repo.fastpanel.direct bookworm InRelease
+Hit:9 http://mirror.hetzner.com/debian/security bookworm-security InRelease
+Hit:10 https://ngrok-agent.s3.amazonaws.com bookworm InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20230311+deb12u1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[1;32mInstalling on DEBIAN bookworm[0m
+[1;32mSystem memory:
+[0m               total        used        free      shared  buff/cache   available
+Mem:            1918         550         825           5         698        1368
+Swap:              0           0           0
+
+[1;32mDisk space:
+[0mFilesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        38G  6.2G   30G  18% /
+/dev/sda15      241M  138K  241M   1% /boot/efi
+
+[1;31mYou have incorrect hostname: Pinguin[0m
