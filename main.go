@@ -20,12 +20,19 @@ func main() {
 
 		if len(ip) <= 0 && len(port) <= 0 && len(login) <= 0 && len(pass) <= 0 {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"error": "Put all the params: ip, port, login, pass",
+				"error": "Вставьте все параметры: ip, port, login, pass",
 			})
 			return
 		}
 
-		sendRun(ip, port, login, pass)
+		err := sendRun(ip, port, login, pass)
+
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "Ошибка подключения",
+			})
+			return
+		}
 
 		content, err := os.ReadFile("install.log")
 		if err != nil {

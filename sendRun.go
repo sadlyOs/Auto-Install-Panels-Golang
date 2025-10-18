@@ -11,12 +11,12 @@ import (
 	// для загрузки файла .env
 )
 
-func sendRun(ip string, port string, login string, pass string) {
+func sendRun(ip string, port string, login string, pass string) error {
 	var output bytes.Buffer
 	logFile, err := os.Create("install.log")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Ошибка создания лог файла: %v\n", err)
-		return
+		return err
 	}
 	defer logFile.Close()
 	// строка успеха
@@ -25,10 +25,13 @@ func sendRun(ip string, port string, login string, pass string) {
 	bashScript, errRead := readBash("testBash.bash")
 	fmt.Println(bashScript)
 	if errRead != nil {
-		return
+		return err
 	}
 
 	client, err := sshConn(ip, port, login, pass)
+	if err != nil {
+		return err
+	}
 	defer client.Close()
 
 	// Создание SFTP сервера
@@ -40,14 +43,14 @@ func sendRun(ip string, port string, login string, pass string) {
 	remoteFile, err := sftpClient.Create(remotePath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Ошибка создания удаленного файла: %v\n", err)
-		return
+		return err
 	}
 	defer remoteFile.Close()
 
 	_, err = io.Copy(remoteFile, strings.NewReader(bashScript))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to make script executable: %v\n", err)
-		return
+		return err
 	}
 
 	// Подготовка к захвату вывода
@@ -57,14 +60,15 @@ func sendRun(ip string, port string, login string, pass string) {
 	err = runCommand(client, command, io.MultiWriter(os.Stdout, &output, logFile), io.MultiWriter(os.Stderr, &output, logFile))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Не удалось выполнить скрипт: %v\n", err)
-		return
+		return err
 	}
 
 	// Проверка ключевой строки в выводе
 	logContent := output.String()
 	if !strings.Contains(logContent, success) {
 		fmt.Fprintf(os.Stderr, "Script execution failed: Key phrase '%s' not found in logs\n", success)
-		return
+		return err
 	}
 	fmt.Println("Установка прошла успешно")
+	return nil
 }
